@@ -62646,7 +62646,7 @@
         if (USE_GODOT_3 && !EXPORT_PACK_ONLY) {
           exportFlag = EXPORT_DEBUG ? '--export-debug' : '--export';
         }
-        let args = [GODOT_PROJECT_FILE_PATH, '--headless', '--quiet', exportFlag, preset.name, executablePath];
+        let args = [90, godotExecutablePath ,GODOT_PROJECT_FILE_PATH, '--headless', exportFlag, preset.name, executablePath];
         if (USE_GODOT_3) {
           args = args.filter(x => x !== '--headless');
         }
@@ -62654,7 +62654,7 @@
           args.push('--verbose');
         }
         core.info(`🖥️ Exporting preset ${preset.name}`);
-        const result = await (0, exec.exec)(godotExecutablePath, args);
+        const result = await (0, exec.exec)('timeout', args);
         if (result !== 0) {
           throw new Error('1 or more exports failed');
         }
