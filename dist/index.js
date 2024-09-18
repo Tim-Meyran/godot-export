@@ -59565,9 +59565,9 @@ async function exportBuilds() {
     if (WINE_PATH) {
         configureWindowsExport();
     }
-    if (!USE_GODOT_3) {
-        await importProject();
-    }
+    //if (!USE_GODOT_3) {
+    //    await importProject();
+    //}
     core.startGroup('✨ Export binaries');
     const results = await doExport();
     core.endGroup();
