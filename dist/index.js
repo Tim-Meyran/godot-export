@@ -59719,7 +59719,7 @@ async function doExport() {
         if (USE_GODOT_3 && !EXPORT_PACK_ONLY) {
             exportFlag = EXPORT_DEBUG ? '--export-debug' : '--export';
         }
-        let args = [GODOT_PROJECT_FILE_PATH, '--headless', exportFlag, preset.name, executablePath];
+        let args = [GODOT_PROJECT_FILE_PATH, '--headless --quiet', exportFlag, preset.name, executablePath];
         if (USE_GODOT_3) {
             args = args.filter(x => x !== '--headless');
         }
